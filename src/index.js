@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import './styles/index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
+import fetchPokemon from './helpers/fetchPokemon';
 
 ReactDOM.render(<App />, document.getElementById('root'));
+fetchPokemon('ditto');
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
