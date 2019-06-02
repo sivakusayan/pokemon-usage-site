@@ -8873,10 +8873,9 @@ slice-ansi@^2.1.0:
     astral-regex "^1.0.0"
     is-fullwidth-code-point "^2.0.0"
 
-smogon-usage-fetch@^4.2.0:
+"smogon-usage-fetch@https://github.com/sivakusayan/smogon-usage-fetch/tarball/master":
   version "4.2.0"
-  resolved "https://registry.yarnpkg.com/smogon-usage-fetch/-/smogon-usage-fetch-4.2.0.tgz#125f196963641499232dc528c35c57b64055e2b7"
-  integrity sha512-oVYagymGOdjipGaiBgH6qNwbBmiCNy2uwN4bq3K1cGUT+QxbILot8ho7V6k8dqNP8bCZbYdO8iig3jZUaDNxrA==
+  resolved "https://github.com/sivakusayan/smogon-usage-fetch/tarball/master#387c95b09e4cffc50022ea2cfe6bebcb3d6d9d1a"
   dependencies:
     "@types/cheerio" "^0.22.11"
     "@types/node-fetch" "^2.3.2"

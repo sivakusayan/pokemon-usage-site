@@ -9,7 +9,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
-    "smogon-usage-fetch": "^4.2.0"
+    "smogon-usage-fetch": "https://github.com/sivakusayan/smogon-usage-fetch/tarball/master"
   },
   "scripts": {
     "start": "react-scripts start",
