@@ -4,12 +4,12 @@ import './styles/index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 
-import fetchFormats from './helpers/fetchFormats';
+import fetchPokemonUsage from './helpers/fetchPokemonUsage';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
-fetchFormats(1, 2018)
-.then(table => console.log(table));
+fetchPokemonUsage('Blaziken')
+.then(res => console.log(res));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

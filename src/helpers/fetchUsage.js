@@ -15,16 +15,18 @@ import '../__types__/UsageTable.js';
  * @param {number} month 
  * @param {number} year 
  * @param {string} format 
+ * @param {number} rank
  * 
  * @return {Promise<UsageTable>}
  * A promise resolving to a UsageTable object
  */
-export default (month, year, format) => {
+export default (month, year, format, rank = '0') => {
   return fetchUsage({ 
     year: year,
     // Library wants us to pass month as string format 'MM'
     month: pad(month, 2),
   }, { 
-    name: format, 
+    name: format,
+    rank,
   })
 };
