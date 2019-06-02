@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import './styles/index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
-import fetchStats from './helpers/fetchStats';
+
+import fetchFormats from './helpers/fetchFormats';
 
 ReactDOM.render(<App />, document.getElementById('root'));
-fetchStats(1, 2019, 'gen7ou')
+
+fetchFormats(1, 2018)
 .then(table => console.log(table));
 
 // If you want your app to work offline and load faster, you can change

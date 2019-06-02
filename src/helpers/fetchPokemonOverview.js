@@ -12,12 +12,10 @@ import '../__types__/Pokemon.js';
  * @return {Promise<Pokemon>} 
  * A promise resolving to a {okemon object
  */
-const fetchPokemon = (pokemonName) => {
+export default (pokemonName) => {
   // API needs lowercased name to work
   const name = pokemonName.trim().toLowerCase();
   
   return axios.get(`${POKEAPI_URL}/${name}`)
   .then(res => res.data)
 };
-
-export default fetchPokemon;
