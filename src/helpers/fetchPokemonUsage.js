@@ -1,10 +1,11 @@
 import fetchUsage from './fetchUsage';
+import getValidTime from '../utils/getValidTime';
 
 import '../__types__/UsageTable.js';
 
 const scanUsageTable = (usageTable, pokemonName) => {
   const rows = usageTable.data.rows;
-  return rows.filter(usage => usage[1] === pokemonName)[0];
+  return rows.filter(usage => usage[1].toLowerCase() === pokemonName.toLowerCase())[0];
 };
 
 /**
@@ -15,16 +16,18 @@ const scanUsageTable = (usageTable, pokemonName) => {
  * @return {{ubers: Usage, ou: Usage, uu: Usage, nu: Usage}}
  */
 export default (pokemonName) => {
-  const ubersStats = fetchUsage(4, 2019, 'gen7ubers')
+  const { month, year } = getValidTime();
+
+  const ubersStats = fetchUsage(month, year, 'gen7ubers')
   .then(table => scanUsageTable(table, pokemonName));
 
-  const ouStats = fetchUsage(4, 2019, 'gen7ou')
+  const ouStats = fetchUsage(month, year, 'gen7ou')
   .then(table => scanUsageTable(table, pokemonName));
 
-  const uuStats = fetchUsage(4, 2019, 'gen7uu')
+  const uuStats = fetchUsage(month, year, 'gen7uu')
   .then(table => scanUsageTable(table, pokemonName));
 
-  const nuStats = fetchUsage(4, 2019, 'gen7nu')
+  const nuStats = fetchUsage(month, year, 'gen7nu')
   .then(table => scanUsageTable(table, pokemonName)); 
 
   const promises = [ubersStats, ouStats, uuStats, nuStats];

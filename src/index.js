@@ -4,11 +4,11 @@ import './styles/index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 
-import fetchPokemonUsage from './helpers/fetchPokemonUsage';
+import fetchPokemonOverview from './helpers/fetchPokemonOverview';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
-fetchPokemonUsage('Blaziken')
+fetchPokemonOverview('Greninja')
 .then(res => console.log(res));
 
 // If you want your app to work offline and load faster, you can change

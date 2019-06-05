@@ -10,7 +10,7 @@ import '../__types__/Pokemon.js';
  * @param {string} pokemonName
  * 
  * @return {Promise<Pokemon>} 
- * A promise resolving to a {okemon object
+ * A promise resolving to a Pokemon object
  */
 export default (pokemonName) => {
   // API needs lowercased name to work
