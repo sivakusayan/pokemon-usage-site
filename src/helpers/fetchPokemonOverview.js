@@ -1,5 +1,6 @@
 import axios from 'axios';
 import POKEAPI_URL from '../__contants__/POKEAPI_URL';
+import parsePokemonAbilities from './parsePokemonAbilities';
 
 import '../__types__/Pokemon.js';
 
@@ -17,5 +18,7 @@ export default (pokemonName) => {
   const name = pokemonName.trim().toLowerCase();
   
   return axios.get(`${POKEAPI_URL}/${name}`)
-  .then(res => res.data)
+  .then(res => {
+    return parsePokemonAbilities(res.data);
+  })
 };
