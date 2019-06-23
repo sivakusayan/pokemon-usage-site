@@ -5,6 +5,7 @@
 
 import { fetchUsage } from 'smogon-usage-fetch';
 import pad from '../utils/pad';
+import CORS_PROXY from '../__constants__/CORS_PROXY';
 
 import '../__types__/UsageTable.js';
 
@@ -28,5 +29,7 @@ export default (month, year, format, rank = '0') => {
   }, { 
     name: format,
     rank,
-  })
+  },
+    CORS_PROXY
+  )
 };

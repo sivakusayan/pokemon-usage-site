@@ -1260,10 +1260,10 @@
     "@types/istanbul-lib-coverage" "*"
     "@types/istanbul-lib-report" "*"
 
-"@types/node-fetch@^2.3.2":
-  version "2.3.4"
-  resolved "https://registry.yarnpkg.com/@types/node-fetch/-/node-fetch-2.3.4.tgz#a46fc4fe9f94b491bf551b6bb7f0f493b9bacd1a"
-  integrity sha512-ZwGXz5osL88SF+jlbbz0WJlINlOZHoSWPrLytQRWRdB6j/KVLup1OoqIxnjO6q9ToqEEP3MZFzJCotgge+IiRw==
+"@types/node-fetch@^2.3.7":
+  version "2.3.7"
+  resolved "https://registry.yarnpkg.com/@types/node-fetch/-/node-fetch-2.3.7.tgz#b7212e895100f8642dbdab698472bab5f3c1d2f1"
+  integrity sha512-+bKtuxhj/TYSSP1r4CZhfmyA0vm/aDRQNo7vbAgf6/cZajn0SAniGGST07yvI4Q+q169WTa2/x9gEHfJrkcALw==
   dependencies:
     "@types/node" "*"
 
@@ -5943,10 +5943,10 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-lightdash@^10.2.2:
-  version "10.2.2"
-  resolved "https://registry.yarnpkg.com/lightdash/-/lightdash-10.2.2.tgz#bb13b8747a59c9be37a670bf78f987bf1b7de9ec"
-  integrity sha512-ctlvP3IztWvcbA5QdYMv59fOEU/OGKBHIUyZSYL8jHP74focTk2yJlUlxtaqw9ZVrBWbuhHD2zQwr+VBC7Cuhg==
+lightdash@^10.2.3:
+  version "10.2.3"
+  resolved "https://registry.yarnpkg.com/lightdash/-/lightdash-10.2.3.tgz#54efab5ca3cb3feea53e10b6f9a7baf013e2c1ba"
+  integrity sha512-BIK4cihLoc6eSllfya43ssT9LR7nLPPhi5JQVN1P6npcPURFx9g9jjLUv1F3OxKvjVriHWUPXRMBwzDjAOt77A==
 
 load-json-file@^2.0.0:
   version "2.0.0"
@@ -6474,7 +6474,7 @@ no-case@^2.2.0:
   dependencies:
     lower-case "^1.1.1"
 
-node-fetch@^2.3.0:
+node-fetch@^2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
   integrity sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
@@ -8873,15 +8873,16 @@ slice-ansi@^2.1.0:
     astral-regex "^1.0.0"
     is-fullwidth-code-point "^2.0.0"
 
-"smogon-usage-fetch@https://github.com/sivakusayan/smogon-usage-fetch/tarball/master":
-  version "4.2.0"
-  resolved "https://github.com/sivakusayan/smogon-usage-fetch/tarball/master#387c95b09e4cffc50022ea2cfe6bebcb3d6d9d1a"
+smogon-usage-fetch@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/smogon-usage-fetch/-/smogon-usage-fetch-4.3.0.tgz#5cf8780c04c53cad64b855701f8492015620cbdc"
+  integrity sha512-zpx15hrUnL/tGXrWFppBkiWEsQTOloa9KMuggDuq3aiBY+N81afwCJeDGY1JKqtBgM1VsYX0O/aN5IR/fHn5sQ==
   dependencies:
     "@types/cheerio" "^0.22.11"
-    "@types/node-fetch" "^2.3.2"
+    "@types/node-fetch" "^2.3.7"
     cheerio "^1.0.0-rc.3"
-    lightdash "^10.2.2"
-    node-fetch "^2.3.0"
+    lightdash "^10.2.3"
+    node-fetch "^2.6.0"
 
 snapdragon-node@^2.0.1:
   version "2.1.1"
