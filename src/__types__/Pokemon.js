@@ -7,7 +7,7 @@
  * Name of the pokemon
  * @property {Stats} stats
  * Object of pokemon stats
- * @property {Array<Type>} types
+ * @property {Array} types
  * Array of the pokemon's type
  * @property {String} sprite
  * URL link to the pokemon sprite
@@ -22,13 +22,4 @@
  * @property {Number} special_attack
  * @property {Number} special_defense
  * @property {Number} speed
- */
-
- /** 
- * @typedef {Object} Type
- * Contains stat data for a pokemon
- * @property {Number} slot
- * Slot the type is taking up
- * @property {{ name: string, url: string }} type
- * Name and URL of the type in question
  */

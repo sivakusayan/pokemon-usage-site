@@ -3,6 +3,7 @@ import axios from 'axios';
 import POKEAPI_URL from '../__constants__/POKEAPI_URL';
 import parsePokemonAbilities from './parsePokemonAbilities';
 import parsePokemonStats from './parsePokemonStats';
+import parsePokemonTypes from './parsePokemonTypes';
 
 import '../__types__/Pokemon.js';
 
@@ -21,16 +22,18 @@ export default async (pokemonName) => {
   
   const res = await axios.get(`${POKEAPI_URL}/${name}`);
   const data = res.data;
+  
   const stats = parsePokemonStats(data.stats);
+  const types = parsePokemonTypes(data.types);
   const abilities = await parsePokemonAbilities(data);
   
   const overview = {
     stats,
     abilities,
+    types,
     sprite: data.sprites.front_default,
     id: data.id,
     name: data.name,
-    types: data.types,
   }
 
   return overview;
