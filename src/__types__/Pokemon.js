@@ -5,21 +5,23 @@
  * ID of the Pokemon
  * @property {String} name
  * Name of the pokemon
- * @property {Array<Stat>} stats
- * Array of pokemon states
+ * @property {Stats} stats
+ * Object of pokemon stats
  * @property {Array<Type>} types
  * Array of the pokemon's type
- * @property {{ front_default: string, front_shiny: string }} sprites
- * URL links to the pokemon sprite
+ * @property {String} sprite
+ * URL link to the pokemon sprite
  */
 
  /** 
- * @typedef {Object} Stat
+ * @typedef {Object} Stats
  * Contains stat data for a pokemon
- * @property {Number} base_stat 
- * Base value of the stat
- * @property {{ name: string, url: string }} stat
- * Name and URL of the stat in question
+ * @property {Number} hp
+ * @property {Number} attack
+ * @property {Number} defense
+ * @property {Number} special_attack
+ * @property {Number} special_defense
+ * @property {Number} speed
  */
 
  /** 
