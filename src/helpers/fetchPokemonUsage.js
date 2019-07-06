@@ -3,6 +3,9 @@ import getValidTime from '../utils/getValidTime';
 
 import '../__types__/UsageTable.js';
 
+/**
+ * Scans for the data associated with a specific pokemon.
+ */
 const scanUsageTable = (usageTable, pokemonName) => {
   const rows = usageTable.data.rows;
   return rows.filter(usage => usage[1].toLowerCase() === pokemonName.toLowerCase())[0];
