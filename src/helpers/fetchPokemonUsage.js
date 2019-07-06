@@ -1,6 +1,7 @@
 import fetchUsage from './fetchUsage';
 import getValidTime from '../utils/getValidTime';
 
+import DEFAULT_TABLE from '../__constants__/DEFAULT_TABLE';
 import '../__types__/UsageTable.js';
 
 /**
@@ -21,16 +22,16 @@ const scanUsageTable = (usageTable, pokemonName) => {
 export default (pokemonName) => {
   const { month, year } = getValidTime();
 
-  const ubersStats = fetchUsage(month, year, 'gen7ubers')
+  const ubersStats = fetchUsage(month, year, `gen${DEFAULT_TABLE.GEN}ubers`)
   .then(table => scanUsageTable(table, pokemonName));
 
-  const ouStats = fetchUsage(month, year, 'gen7ou')
+  const ouStats = fetchUsage(month, year, `gen${DEFAULT_TABLE.GEN}ou`)
   .then(table => scanUsageTable(table, pokemonName));
 
-  const uuStats = fetchUsage(month, year, 'gen7uu')
+  const uuStats = fetchUsage(month, year, `gen${DEFAULT_TABLE.GEN}uu`)
   .then(table => scanUsageTable(table, pokemonName));
 
-  const nuStats = fetchUsage(month, year, 'gen7nu')
+  const nuStats = fetchUsage(month, year, `gen${DEFAULT_TABLE.GEN}nu`)
   .then(table => scanUsageTable(table, pokemonName)); 
 
   const promises = [ubersStats, ouStats, uuStats, nuStats];
