@@ -1,5 +1,5 @@
 import React from 'react';
 
-const PokemonList = () => null;
+const UsageTable = () => null;
 
-export default PokemonList;
+export default UsageTable;
