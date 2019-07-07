@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import UsageTable from '../index';
+import LimitedList from '../../utils/LimitedList';
 import Loader from '../../utils/Loader';
 
 describe('initialization', () => {
@@ -27,5 +28,17 @@ describe('behaviour', () => {
     wrapper.setState({ isLoading: false });
 
     expect(wrapper.find(<Loader />).exists()).toBeFalsy();
+  });
+  it('displays the list while isLoading is false', () => {
+    const wrapper = shallow(<UsageTable />);
+    wrapper.setState({ isLoading: false });
+
+    expect(wrapper.find(<LimitedList />).exists()).toBeTruthy();
+  });
+  it('hides the loader while isLoading is true', () => {
+    const wrapper = shallow(<UsageTable />);
+    wrapper.setState({ isLoading: true });
+
+    expect(wrapper.find(<LimitedList />).exists()).toBeFalsy();
   });
 })

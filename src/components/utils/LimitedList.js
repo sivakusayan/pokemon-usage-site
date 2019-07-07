@@ -19,7 +19,7 @@ class LimitedList extends React.Component {
     return (
       <div className='limited-list'>
         <ul className='limited-list__list'>
-          {children.slice(limit)}
+          {children.slice(0, limit)}
         </ul>
         {children.length > limit && (
           <button 
