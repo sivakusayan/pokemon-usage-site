@@ -1,4 +1,1 @@
-export default {
-  GEN: 7,
-  FORMAT: 'ou',
-}
+export default 'gen7ou'

@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import Loader from '../utils/Loader';
 import LimitedList from '../utils/LimitedList';
@@ -13,7 +14,9 @@ class UsageTable extends React.Component {
   }
 
   componentDidMount = () => {
-    fetchUsage(2, 2018, 'gen7ou').then(data => {
+    const { month, year, format } = this.props.table;
+    
+    fetchUsage(month, year, format).then(data => {
       const rows = data.data.rows;
       this.setState({
         isLoading: false,
@@ -29,7 +32,8 @@ class UsageTable extends React.Component {
         {isLoading && <Loader />}
         {!isLoading && (
           <LimitedList>
-            {table.map(item => <TableItem item={item}></TableItem>)}
+            {/* item[1] is pokemon name */}
+            {table.map(item => <TableItem key={item[1]} item={item}></TableItem>)}
           </LimitedList>
         )}
       </div>
@@ -37,4 +41,8 @@ class UsageTable extends React.Component {
   }
 }
 
-export default UsageTable;
+const mapStateToProps = state => ({
+  table: state.currentUsageTable,
+});
+
+export default connect(mapStateToProps)(UsageTable);

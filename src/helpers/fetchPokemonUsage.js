@@ -22,16 +22,16 @@ const scanUsageTable = (usageTable, pokemonName) => {
 export default (pokemonName) => {
   const { month, year } = getLatestValidTime();
 
-  const ubersStats = fetchUsage(month, year, `gen${DEFAULT_TABLE.GEN}ubers`)
+  const ubersStats = fetchUsage(month, year, DEFAULT_TABLE)
   .then(table => scanUsageTable(table, pokemonName));
 
-  const ouStats = fetchUsage(month, year, `gen${DEFAULT_TABLE.GEN}ou`)
+  const ouStats = fetchUsage(month, year, DEFAULT_TABLE)
   .then(table => scanUsageTable(table, pokemonName));
 
-  const uuStats = fetchUsage(month, year, `gen${DEFAULT_TABLE.GEN}uu`)
+  const uuStats = fetchUsage(month, year, DEFAULT_TABLE)
   .then(table => scanUsageTable(table, pokemonName));
 
-  const nuStats = fetchUsage(month, year, `gen${DEFAULT_TABLE.GEN}nu`)
+  const nuStats = fetchUsage(month, year, DEFAULT_TABLE)
   .then(table => scanUsageTable(table, pokemonName)); 
 
   const promises = [ubersStats, ouStats, uuStats, nuStats];

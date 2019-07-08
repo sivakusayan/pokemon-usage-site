@@ -2,14 +2,14 @@ import React from 'react';
 
 import toKebabCase from '../../utils/toKebabCase';
 
-const TableItem = ({ item, key }) => {
+const TableItem = ({ item }) => {
   const rank = item[0];
   const pokemonName = item[1];
   const percentUsage = item[2];
   const rawUsage = item[3];
 
   return (
-    <li key={toKebabCase(pokemonName)}>
+    <li>
       <span className={`pkspr-pokemon-${toKebabCase(pokemonName)}`}></span>
       <p>Rank: {rank}</p>
       <p>Name: {pokemonName}</p>
