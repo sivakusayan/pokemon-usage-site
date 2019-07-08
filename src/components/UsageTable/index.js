@@ -2,8 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Loader from '../utils/Loader';
-import LimitedList from '../utils/LimitedList';
-import TableItem from './TableItem';
+import Table from './Table';
 
 import fetchUsage from '../../helpers/fetchUsage';
 
@@ -34,12 +33,7 @@ export class UnwrappedUsageTable extends React.Component {
     return (
       <div>
         {isLoading && <Loader />}
-        {!isLoading && (
-          <LimitedList>
-            {/* item[1] is pokemon name */}
-            {table.map(item => <TableItem key={item[1]} item={item}></TableItem>)}
-          </LimitedList>
-        )}
+        {!isLoading && <Table table={table} />}
       </div>
     )
   }

@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { UnwrappedUsageTable } from '../index';
-import LimitedList from '../../utils/LimitedList';
+import Table from './Table';
 import Loader from '../../utils/Loader';
 
 let wrapper;
@@ -35,14 +35,14 @@ describe('behaviour', () => {
 
     expect(wrapper.find(Loader).exists()).toBeFalsy();
   });
-  it('displays the list while isLoading is false', () => {
+  it('displays the table while isLoading is false', () => {
     wrapper.setState({ isLoading: false });
 
-    expect(wrapper.find(LimitedList).exists()).toBeTruthy();
+    expect(wrapper.find(Table).exists()).toBeTruthy();
   });
-  it('hides the loader while isLoading is true', () => {
+  it('hides the table while isLoading is true', () => {
     wrapper.setState({ isLoading: true });
 
-    expect(wrapper.find(LimitedList).exists()).toBeFalsy();
+    expect(wrapper.find(Table).exists()).toBeFalsy();
   });
 })
