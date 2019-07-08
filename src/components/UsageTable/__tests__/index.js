@@ -1,44 +1,48 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import UsageTable from '../index';
+import { UnwrappedUsageTable } from '../index';
 import LimitedList from '../../utils/LimitedList';
 import Loader from '../../utils/Loader';
 
+let wrapper;
+
 describe('initialization', () => {
+  beforeAll(() => {
+    wrapper = shallow(<UnwrappedUsageTable />,  { disableLifecycleMethods: true });
+  });
+
   it('initializes isLoading to true', () => {
-    const wrapper = shallow(<UsageTable />);
     expect(wrapper.state('isLoading')).toBeTruthy();
   });
   it('initializes table to the empty array', () => {
-    const wrapper = shallow(<UsageTable />);
     expect(wrapper.state('table')).toEqual([]);
   });
 });
 
 describe('behaviour', () => {
+  beforeAll(() => {
+    wrapper = shallow(<UnwrappedUsageTable />, { disableLifecycleMethods: true });
+  });
+
   it('displays the loader while isLoading is true', () => {
-    const wrapper = shallow(<UsageTable />);
     wrapper.setState({ isLoading: true });
 
-    expect(wrapper.find(<Loader />).exists()).toBeTruthy();
+    expect(wrapper.find(Loader).exists()).toBeTruthy();
   });
   it('hides the loader while isLoading is false', () => {
-    const wrapper = shallow(<UsageTable />);
     wrapper.setState({ isLoading: false });
 
-    expect(wrapper.find(<Loader />).exists()).toBeFalsy();
+    expect(wrapper.find(Loader).exists()).toBeFalsy();
   });
   it('displays the list while isLoading is false', () => {
-    const wrapper = shallow(<UsageTable />);
     wrapper.setState({ isLoading: false });
 
-    expect(wrapper.find(<LimitedList />).exists()).toBeTruthy();
+    expect(wrapper.find(LimitedList).exists()).toBeTruthy();
   });
   it('hides the loader while isLoading is true', () => {
-    const wrapper = shallow(<UsageTable />);
     wrapper.setState({ isLoading: true });
 
-    expect(wrapper.find(<LimitedList />).exists()).toBeFalsy();
+    expect(wrapper.find(LimitedList).exists()).toBeFalsy();
   });
 })

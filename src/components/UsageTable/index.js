@@ -7,13 +7,14 @@ import TableItem from './TableItem';
 
 import fetchUsage from '../../helpers/fetchUsage';
 
-class UsageTable extends React.Component {
+// Export for testing
+export class UnwrappedUsageTable extends React.Component {
   state = {
     isLoading: true,
     table: [],
   }
 
-  componentDidMount = () => {
+  fetchTable = () => {
     const { month, year, format } = this.props.table;
     
     fetchUsage(month, year, format).then(data => {
@@ -24,6 +25,9 @@ class UsageTable extends React.Component {
       })
     })
   }
+
+  componentDidMount = () => this.fetchTable()
+  componentDidUpdate = () => this.fetchTable()
 
   render = () => {
     const { isLoading, table } = this.state;
@@ -45,4 +49,5 @@ const mapStateToProps = state => ({
   table: state.currentUsageTable,
 });
 
-export default connect(mapStateToProps)(UsageTable);
+// Wraps the unwrapped component for consumption
+export default connect(mapStateToProps)(UnwrappedUsageTable);
