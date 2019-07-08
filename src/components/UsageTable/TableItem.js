@@ -4,9 +4,13 @@ import toKebabCase from '../../utils/toKebabCase';
 
 const TableItem = ({ item }) => {
   const rank = item[0];
-  const pokemonName = item[1];
+  let pokemonName = item[1];
   const percentUsage = item[2];
   const rawUsage = item[3];
+
+  // Comply with naming standards in Pikasprite
+  if (pokemonName === 'NidoranM') pokemonName = 'nidoran-m';
+  if (pokemonName === 'NidoranF') pokemonName = 'nidoran-f';
 
   return (
     <li>
