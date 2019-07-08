@@ -29,7 +29,7 @@ class UsageTable extends React.Component {
         {isLoading && <Loader />}
         {!isLoading && (
           <LimitedList>
-            {table.map(item => <p>{item}</p>)}
+            {table.map(item => <TableItem item={item}></TableItem>)}
           </LimitedList>
         )}
       </div>
