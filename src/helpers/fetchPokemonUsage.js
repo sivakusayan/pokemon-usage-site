@@ -1,5 +1,5 @@
 import fetchUsage from './fetchUsage';
-import getValidTime from '../utils/getValidTime';
+import getLatestValidTime from '../utils/getLatestValidTime';
 
 import DEFAULT_TABLE from '../__constants__/DEFAULT_TABLE';
 import '../__types__/UsageTable.js';
@@ -20,7 +20,7 @@ const scanUsageTable = (usageTable, pokemonName) => {
  * @return {{ubers: Usage, ou: Usage, uu: Usage, nu: Usage}}
  */
 export default (pokemonName) => {
-  const { month, year } = getValidTime();
+  const { month, year } = getLatestValidTime();
 
   const ubersStats = fetchUsage(month, year, `gen${DEFAULT_TABLE.GEN}ubers`)
   .then(table => scanUsageTable(table, pokemonName));

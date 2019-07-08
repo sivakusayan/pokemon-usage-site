@@ -6,7 +6,7 @@ const initialState = {
   // Note that gen should be <= 7
   gen: DEFAULT_TABLE.GEN,
   // Format should be ubers, ou, uu, or nu
-  format: DEFAULT_TABLE.FORMATg
+  format: DEFAULT_TABLE.FORMAT,
 };
 
 export default function reducer(state = initialState, action = {}) {
